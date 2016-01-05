@@ -1,0 +1,25 @@
+<div ng-class="{entryExpected:!isNewEntry() && !edit && !disabled, 'main-box-disabled': disabled}" ng-click="createEditableFields()">
+  <div class="expected-name-cell" ng-show="!isNewEntry() && !edit"><span>{{name}}</span></div>
+  <div class="expected-value-cell" ng-show="!isNewEntry() && !edit"><span>{{value}}</span></div>
+  <div class="edit-cell" ng-show="!isNewEntry() && !edit"><span
+    class="edit-row-balance-detail glyphicon glyphicon-pencil"></span></div>
+
+  <form name="expectedSituationForm">
+    <div class="inline-block" ng-show="isNewEntry() || edit"><input class="expected-edit-name-cell" type="text" maxlength="23" required
+                                                                    ng-model="newValue.name"></div>
+    <div class="inline-block" ng-if="isNewEntry() || edit"><input class="expected-edit-value-cell" type="number" step="0.01" required
+                                                                  ng-model="newValue.quantity"/></div>
+
+    <button ng-if="isNewEntry() || edit" title="Save" type="submit" class="inline-block balance-button"
+            ng-click='saveEdition(expectedSituationForm.$valid, $event)'><span class="glyphicon glyphicon-ok-circle"
+                                                                       aria-hidden="true"></span></button>
+    <button ng-if="edit" class="inline-block balance-button" title="Delete" ng-click='deleteEntry()'><span
+      class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+    <button ng-if="isNewEntry() || edit" title="Cancel" class="inline-block balance-button" ng-click='cancelEdition($event)'>
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+    <div class="cell-main-view">
+      <span ng-show="showDuplicatedNamesError">ERROR!! There are fields with the same name. They must be different to be saved.</span>
+    </div>
+  </form>
+</div>
+

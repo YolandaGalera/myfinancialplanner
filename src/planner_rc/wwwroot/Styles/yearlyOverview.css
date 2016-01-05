@@ -1,0 +1,11 @@
+.overview {
+  width: 100%;
+}
+
+.yearly-overview-chart {
+  width: 50%;
+}
+
+.yearly-overview-chart .yearly-overview-chart-svg{
+  overflow: visible;
+}

@@ -1,0 +1,86 @@
+.pagination > .active > a:focus, .pagination > .active > a, .pagination > .active > a:hover, .balance-detail-pagination {
+  background-color: #00796B;
+  border-color: #00796B;
+}
+
+.pagination > li > a, .balance-detail-pagination {
+  color: #00796B;
+}
+
+.entrybalancedetail:hover {
+  background-color: #DDDDDD;
+  width: 390px;
+}
+
+.edit-row-balance-detail {
+  visibility: hidden;
+}
+
+.entrybalancedetail:hover .edit-row-balance-detail {
+  background-color: #DDDDDD;
+  visibility: visible;
+}
+
+.edit-row-balance-detail.glyphicon.glyphicon-pencil {
+  width: 30px;
+  height: 23px;
+  top: 0px;
+}
+
+.sortorder:after {
+  content: '\25b2';
+}
+
+.sortorder.reverse:after {
+  content: '\25bc';
+}
+
+.filter-balance-block {
+  display: inline-block;
+}
+
+.filter-group-by-button {
+  border: none;
+}
+
+.filter-group-by-button.button-active {
+  background-color: #009688;
+  box-shadow: none;
+}
+
+.filter-group-by-block {
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 32px;
+  margin-left: 30px;
+}
+
+.title-detail-view {
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+  margin: 35px 10px 10px 10px;
+}
+
+.left {
+  display: inline;
+  float: left;
+}
+
+.inline {
+  display: inline;
+}
+
+.groupBySelectDisabled {
+  color: grey;
+}
+
+.balance-entry.main-box {
+  min-width: 516px;
+}
+
+.name-edit-cell {
+  display: table-cell;
+  padding-left: 5px;
+  width: 150px;
+}

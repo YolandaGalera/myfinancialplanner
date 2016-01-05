@@ -1,0 +1,40 @@
+.left-panel-container {
+  width: 200px;
+  height: calc(100% - 50px);
+  background-color: #009688;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 5px 0 10px -6px #888;
+  vertical-align: top;
+}
+
+.log-out-button {
+  width: auto;
+  height: auto;
+  position: fixed;
+  bottom: 10px;
+  font-size: x-large;
+  color: white;
+  left: 62.5px;
+  background-color: #009688;
+}
+
+.log-out-text {
+  font-size: small;
+  display: block;
+}
+
+.log-out-button:hover{
+  cursor: pointer;
+  background-color: #00796B;
+}
+
+div.overview-button-wrapper{
+  padding-top: 0px;
+}
+
+.overview-button{
+  width: 100%;
+  height: 100%;
+  padding-top: 8%;
+}

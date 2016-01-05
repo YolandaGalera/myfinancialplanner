@@ -1,0 +1,220 @@
+html, body {
+  height: 100%;
+}
+
+button{
+  border: none;
+}
+
+html body {
+  background: #f2f2f2;
+}
+
+input, select {
+  height: 40px;
+}
+
+.main-container {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main-view-container {
+  margin-left: 10px;
+  display: inline-block;
+  height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+
+.main-view-container::-webkit-scrollbar {
+  display: none;
+}
+
+.table-main-view {
+  display: table;
+}
+
+.row-main-view {
+  display: table-row;
+}
+
+.cell-main-view {
+  display: table-cell;
+  border-width: thin;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+
+.title-main-view {
+  display: table-caption;
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+  margin: 10px;
+}
+
+.remove-expected-item {
+  cursor: pointer
+}
+
+.selectable {
+  cursor: pointer;
+  background-color: #00796B;
+  color: white;
+  height: 50px;
+  width: 160px;
+  box-shadow: 0 0px 0 #e5e5e5, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+  outline: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.button {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-top: 6%;
+}
+
+.right-container {
+  width: -moz-calc(100% - 220px);
+  width: -webkit-calc(100% - 220px);
+  width: calc(100% - 220px);
+}
+
+.right-container-login {
+  height: 100%;
+  width: -moz-calc(100% - 220px);
+  width: -webkit-calc(100% - 220px);
+  width: calc(100% - 220px);
+}
+
+.body-font-family {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.hello-user {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.date-cell {
+  display: table-cell;
+  padding-left: 5px;
+  width: 120px;
+}
+
+.name-cell {
+  display: table-cell;
+  padding-left: 5px;
+  min-width: 180px;
+}
+
+.value-cell {
+  display: table-cell;
+  padding-left: 5px;
+  width: 90px;
+}
+
+.edit-cell {
+  display: table-cell;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+
+.balance-button {
+  height: 40px;
+  width: 45px;
+  background-color: #00796B;
+  color: white;
+  border: none;
+}
+
+.btn.btn-default.btn-confirmation {
+  background-color: #00796B;
+  color: white;
+  height: 34px;
+}
+
+.top-bar {
+  height: 50px;
+  width: 100%;
+  background-color: #182C2A;
+  box-shadow: 0 -1px 0 #e5e5e5, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 4px;
+}
+
+.main-box{
+  height: 45px;
+  border-left: 1px solid #e5e5e5;
+  box-shadow: 0 0 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+  background-color: white;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.main-box-disabled {
+  cursor: default;
+  background-color: whitesmoke;
+  color: white;
+}
+
+input[type=number].value-cell {
+  text-align: right;
+}
+
+.main-box.pointer-less {
+  cursor: inherit;
+  font-weight: bold;
+  background-color: gainsboro;
+}
+
+.overview {
+  width: 100%;
+}
+
+.chart {
+  height: 80%;
+  width: 50%;
+  vertical-align: top;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.chart-svg {
+  width: 100%;
+}
+
+.chart .chart-svg {
+  overflow: visible;
+}
+
+.display-inline {
+  display: inline-block;
+}
+
+.footer-item-container {
+  width: 60%;
+  padding-top: 10%;
+  margin-left: 25%;
+}
+
+.account-btn {
+  margin-top: 10px;
+}
+
+.main-input {
+  width: 174px;
+  padding-left: 5px;
+}

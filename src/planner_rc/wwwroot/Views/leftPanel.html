@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div class="left-panel-container">
+  <div ng-click="goInstantEntry()" class="selectable button">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New entry
+  </div>
+  <div ng-click="goDailySituation()" class="selectable button">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New day
+  </div>
+  <div class="dropdown selectable button overview-button-wrapper">
+    <span class="dropdown-toggle glyphicon glyphicon-list overview-button" aria-hidden="true"
+          data-toggle="dropdown"><span class="body-font-family"> Overview</span><b class="caret"></b></span>
+    <ul class="dropdown-menu" aria-hidden="true">
+      <li><a class="glyphicon glyphicon-signal" aria-hidden="true" href="#yearlyOverview"> Charts</a></li>
+      <li><a class="glyphicon glyphicon-zoom-in" aria-hidden="true" href="#balanceDetail"> Detail</a></li>
+    </ul>
+  </div>
+  <div ng-click="goMain()" class="selectable button">
+    <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> Expectations
+  </div>
+  <div ng-click="goAccount()" class="selectable button">
+    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Account
+  </div>
+  <div ng-click="logout()" type="button" class="inline log-out-button btn-lg" value="Log out">
+    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+    <span class="log-out-text">Log out</span>
+  </div>
+</div>
+</body>
+</html>

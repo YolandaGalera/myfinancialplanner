@@ -1,0 +1,43 @@
+<div class="daily-view-container">
+  <div class="title-daily-view">
+    <p>NEW DAY ENTRY</p>
+  </div>
+
+  <form name="realDailySituationForm" ng-submit="saveDailySituation()" class="dynamic-columns">
+
+    <div class="row-daily-view" ng-repeat="dailyField in dailyFields">
+      <div class="cell-daily-view"><span>{{dailyField.name}}</span></div>
+      <div class="cell-daily-view">
+        <input type="number" step="0.01" ng-model="dailyField.value"/>
+      </div>
+    </div>
+
+
+    <div class="inline-block">
+      <div class="row-date-daily-view">
+        <div class="cell-date-daily-view"><span>Date: </span></div>
+        <div class="cell-date-value-daily-view">
+          <input type="text" date-time required ng-model="daily.date" min-view="date" view='date' format="yyyy-MM-dd"/>
+        </div>
+      </div>
+      <br/>
+      <div class="row-date-daily-view">
+        <div class="cell-date-daily-view"><span>Total daily expenses: </span></div>
+        <div class="cell-date-daily-view"><span>{{calculateDailyExpenses()}}</span></div>
+      </div>
+      <div class="row-date-daily-view">
+        <div class="cell-date-daily-view"><span>Total daily benefits: </span></div>
+        <div class="cell-date-daily-view"><span>{{calculateDailyBenefits()}}</span></div>
+      </div>
+      <div class="row-date-daily-view">
+        <div class="cell-date-daily-view">
+          <button class="selectable inline-block save-button"
+                  type="submit">
+                <span class="glyphicon glyphicon-ok-circle"
+                      aria-hidden="true"></span> SAVE DATA
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

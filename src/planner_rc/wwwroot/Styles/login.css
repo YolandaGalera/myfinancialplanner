@@ -1,0 +1,204 @@
+.login-background {
+  height: 100%;
+  min-height: 440px;
+  width: -moz-calc(100% + 220px);
+  width: -webkit-calc(100% + 220px);
+  width: calc(100% + 220px);
+  background-image: url('../images/loginBackground.JPG');
+  background-size: 100% 100%;
+  -webkit-filter: blur(2px);
+  filter: blur(2px)
+}
+
+.welcome-text {
+  width: 470px;
+  color: white;
+  font-size: 20px;
+  margin-left: 5%;
+  text-align: justify;
+  float: left;
+  display: inline-block;
+}
+
+.welcome-header {
+  font-size: 30px;;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  width: 470px;
+}
+
+.login-container {
+  float: left;
+  margin-left: 5%;
+  padding-bottom: 10px;
+  width: 300px;
+  background-color: #009688;
+  border-radius: 2%;
+  display: inline-block;
+  box-shadow: 3px 0px 4px #888888;
+}
+
+.front-card {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  margin-top: -225px; /*HALF OF THE HEIGHT*/
+  margin-left: -450px; /*HALF OF THE WIDTH*/
+  width: 900px;
+  height: 450px;
+  display: block;
+}
+
+.username-field {
+  /*height: 25px;*/
+  width: 90%;
+  display: block;
+  margin: 14px auto 12px auto;
+}
+
+.password-field {
+  width: 61%;
+  display: inline-block;
+  margin: 5px 5px 0px 14px;
+  float: left;
+}
+
+.register-password-field {
+  width: 90%;
+  display: block;
+  margin: 14px auto 12px auto;
+}
+
+.login-forgot {
+  color: white;
+  display: inline-block;
+  margin-left: 14px;
+  font-size: 12px;
+}
+
+.login-button {
+  margin: 4px 0px;
+  height: 40px;
+  width: 80px;
+  background-color: #00796B;
+  color: white;
+  border: none;
+}
+
+button.create-user-toggle {
+  margin-left: 14px;
+}
+
+input[type=submit]:disabled {
+  background-color: #00796B;
+  color: lightgray;
+}
+
+.login-quote {
+  font-style: italic;
+  font-size: x-large;
+}
+
+.reset-password-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -120px;
+  margin-left: -150px;
+  height: 280px;
+  width: 300px;
+  background-color: #009688;
+  border-radius: 2%;
+  box-shadow: 3px 0px 4px #888888;
+}
+
+.reset-password-input {
+  margin-bottom: 10px;
+  width: 280px;
+}
+
+.reset-password-submit{
+  width: 280px;
+  border-radius: 2%;
+  border-color: #00796B;
+  border-style: solid;
+  position: absolute;
+  bottom: 10px;
+}
+
+input.register-sumbit{
+  margin-left: 14px;
+}
+
+.email-sent-container {
+  margin-top: 50px;
+  margin-left: -10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  height: 80px;
+  width: 300px;
+  background-color: #009688;
+  border-radius: 2%;
+  box-shadow: 3px 0px 4px #888888;
+}
+
+.email-not-sent-container {
+  margin-top: 50px;
+  margin-left: -10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  height: 60px/*80px*/;
+  width: 300px;
+  background-color: #009688;
+  border-radius: 2%;
+  box-shadow: 3px 0px 4px #888888;
+}
+
+.passwords-equals {
+  height: 10px;
+  color: black;
+}
+.reset-password-text {
+  width: 60%;
+  padding-top: 10%;
+  margin-left: 25%;
+}
+
+.footer {
+  position: absolute;
+  color: white;
+  bottom: 20px;
+  margin-left: 5%;
+}
+
+.footer a {
+  color:white;
+}
+
+.send-email-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -120px;
+  margin-left: -150px;
+  height: 120px;
+  width: 300px;
+  background-color: #009688;
+  border-radius: 2%;
+  box-shadow: 3px 0px 4px #888888;
+}
+
+.signup-label {
+    margin-left: 14px;
+}

@@ -1,0 +1,9 @@
+artifacts
+src/planner_rc/planner.xproj.user
+src/planner_rc/node_modules
+.vs
+src/planner_rc/wwwroot/lib
+src/planner_rc/bower_components
+src/planner_rc/Properties/PublishProfiles
+src/planner_rc/wwwroot/aes-properties-IV.bin
+src/planner_rc/wwwroot/aes-properties-KEY.bin

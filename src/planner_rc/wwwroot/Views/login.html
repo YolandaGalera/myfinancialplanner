@@ -1,0 +1,92 @@
+<div class='login-background'>
+</div>
+<div class='front-card'>
+  <div class='welcome-text'>
+    <div class='welcome-header'>MY FINANCIAL PLANNER</div>
+    <p class='login-quote'>"Money doesn't make you happy, but it is so similar that you cannot feel the difference"</p>
+
+    <p>Because you want to save money, and we know how.</p>
+
+    <p>My Financial Planner is the new way of tracking your expenses and, more important, it is the new way of tracking your
+      savings.</p>
+  </div>
+  <div class='login-container'>
+     <!-- method="post" action="api/account/login">-->
+    <form name='loginForm'>
+      <input type='text'
+             name='username'
+             ng-model='username'
+             class='username-field'
+             placeholder='Email'/>
+      <input type='password'
+             name='password'
+             ng-model='password'
+             class='password-field'
+             placeholder='Password'/>
+      <input type='submit'
+             class='login-button selectable'
+             value='Log in'
+             ng-click='login()'
+             ng-disabled='isDisabled()'>
+
+      <a class='login-forgot' ng-href="#reset-password-request">Forgot password?</a>
+    </form>
+    <div ng-if='loginStatus.isError'>
+      <p>Error in email or password</p>
+    </div>
+    <button class='create-user-toggle login-button selectable' ng-click='toggleCreateUserForm()'>
+      {{signup.buttonMessage}}
+    </button>
+    <div ng-if='signup.isShowForm'>
+      <form name='registerForm'>
+        <input type='email'
+               name='registerEmail'
+               ng-change='hideMessage()'
+               ng-model='signup.user'
+               class='username-field'
+               placeholder='Email'
+               required/>
+        <input type='password'
+               name='password'
+               ng-model='signup.pass'
+               class='register-password-field'
+               placeholder='Password'
+               validate-password
+               required/>
+        <input type='password'
+               ng-model='signup.repeatedPass'
+               class='register-password-field'
+               placeholder='Repeat Password'
+               ng-blur='checkPasswordMatch()'
+               required/>
+        <input type='submit'
+               class='login-button selectable register-sumbit'
+               value='Submit'
+               ng-click='register(registerForm.$valid)'>
+
+        <div ng-if='signup.isErrorCreatingUser'>
+          <p>{{signup.errorMessage}}</p>
+        </div>
+
+        <div ng-messages='registerForm.password.$error'
+             ng-if='registerForm.$submitted'>
+          <span ng-message='containsletter'>The password should contain at least one letter</span>
+          <span ng-message='containsdigit'>The password should contain at least one number</span>
+          <span ng-message='hascorrectlength'>The password should contain at least 6 characters</span>
+        </div>
+      </form>
+    </div>
+    <div class="signup-label" ng-if='signup.isUserCreated'>
+      <p>The user has been created.</p>
+    </div>
+    <div class="signup-label" ng-if='signup.isErrorWithPasswordMatching'>
+      <p>Passwords don't match.</p>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <span><a href="#contact">Contact</a> / </span>
+  <span><a href="#about">About</a> / </span>
+  <span><a href="#faq">FAQ</a> / </span>
+  <a href="#legal">Legal information</a>
+</div>

@@ -1,0 +1,15 @@
+<div class="balance-entry main-box" ng-class="{entrybalancedetail: !edit && !disabled, 'main-box-disabled': disabled}" ng-click="createEditableFields($event)">
+  <div class="date-cell" ng-show="!edit && !isWeek"><span>{{date | date: getFormat()}}</span></div>
+  <div class="date-cell" ng-show="!edit && isWeek"><span>{{weekOfYear}}</span></div>
+  <div class="name-cell" ng-show="!edit"><span class="name-cell">{{name}}</span></div>
+  <div class="value-cell" ng-show="!edit"><span>{{value}}</span></div>
+  <div class="edit-cell" ng-show="!edit"><span class="edit-row-balance-detail glyphicon glyphicon-pencil"></span></div>
+
+  <div class="inline-block" ng-show="edit"><input class="date-cell" type="text" date-time ng-model="selection.date" min-view="date" view='date' format="yyyy-MM-dd"/></div>
+  <div class="inline-block" ng-show="edit"><select class="name-edit-cell" ng-options="category.name for category in categories track by category.name" ng-model="selectedCategory" required></select></div>
+  <div class="inline-block" ng-show="edit"><input class="value-cell" type="number" step="0.01" required ng-model="newValue"/></div>
+
+  <button title="Save" ng-show="edit" class="inline-block balance-button" ng-click='saveEdition($event)'><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></button>
+  <button title="Delete" ng-show="edit" class="inline-block balance-button" ng-click='deleteEntry()'><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+  <button title="Cancel" ng-show="edit" class="inline-block balance-button" ng-click='cancelEdition($event)'><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+</div>

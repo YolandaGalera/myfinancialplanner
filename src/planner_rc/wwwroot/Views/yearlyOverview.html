@@ -1,0 +1,55 @@
+<div class="table-main-view overview">
+  <div class="title-main-view">
+    <p>{{currentYear}}</p>
+  </div>
+  <div ng-repeat="overview in overviews | orderBy:'-month'">
+    <div class="display-inline">
+      <div class="row-main-view">
+        <div class="cell-main-view"><span><h3>{{getMonthName(overview.month)}}</h3></span></div>
+      </div>
+
+      <div class="row-main-view"
+           ng-repeat="incomeField in overview.income">
+        <div class="cell-main-view"><span>{{incomeField.name}}</span></div>
+        <div class="cell-main-view"><span>{{incomeField.value}}</span></div>
+        <div class="cell-main-view"><span>{{incomeField.name}} expected: {{getExpectedIncome(incomeField.name)}}</span>
+        </div>
+        <div class="cell-main-view">
+          <span>{{getExpectedMessageIncomeBenefits(incomeField.value, getExpectedIncome(incomeField.name))}}</span>
+        </div>
+      </div>
+
+      <div class="row-main-view"
+           ng-repeat="expensesField in overview.expenses">
+        <div class="cell-main-view"><span>{{expensesField.name}}</span></div>
+        <div class="cell-main-view"><span>{{expensesField.value}}</span></div>
+        <div class="cell-main-view">
+          <span>{{expensesField.name}} expected: {{getExpectedExpense(expensesField.name)}}</span></div>
+        <div class="cell-main-view">
+          <span>{{getExpectedMessage(expensesField.value, getExpectedExpense(expensesField.name))}}</span>
+        </div>
+      </div>
+
+      <div class="row-main-view">
+        <div class="cell-main-view"><span>Total expenses: </span></div>
+        <div class="cell-main-view"><span>{{overview.totalExpenses}}</span></div>
+        <div class="cell-main-view"><span> Expenses expected: {{totalExpensesExpected}}</span></div>
+        <div class="cell-main-view">
+          <span>{{getExpectedMessage(overview.totalExpenses, totalExpensesExpected)}}</span>
+        </div>
+      </div>
+
+      <div class="row-main-view">
+        <div class="cell-main-view"><span>Total benefits: </span></div>
+        <div class="cell-main-view"><span>{{overview.benefits}}</span></div>
+        <div class="cell-main-view"><span> Benefits expected: {{benefitsExpected}}</span></div>
+        <div class="cell-main-view">
+          <span>{{getExpectedMessageIncomeBenefits(overview.benefits, benefitsExpected)}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="yearly-overview-chart display-inline" id="chart{{overview.month}}">
+      <svg class="yearly-overview-chart-svg"></svg>
+    </div>
+  </div>
+</div>

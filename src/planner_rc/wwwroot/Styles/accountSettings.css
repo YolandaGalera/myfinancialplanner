@@ -1,0 +1,25 @@
+﻿.update-password {
+    width: 174px;
+}
+
+.saved-label {
+    margin-left: 4px;
+    color: #00796B;
+    opacity:0;
+    -webkit-transition: opacity 2s linear; /* For Safari 3.1 to 6.0 */
+    transition: opacity 2s linear;
+}
+
+.fade.saved-label {
+    opacity: 1;
+}
+
+.error-validation {
+    color: black;
+}
+
+.change-password-input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 250px;
+}

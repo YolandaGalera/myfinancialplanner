@@ -1,0 +1,63 @@
+.dynamic-columns{
+  -webkit-column-width: 330px;
+  height: 90%;
+  overflow: auto;
+}
+
+.daily-view-container{
+  height: 100%;
+  display: inline;
+}
+
+.save-button {
+  padding-left: 10px;
+  margin-top: 5px;
+}
+
+.row-daily-view {
+  min-width: 320px;
+  margin: 5px;
+}
+
+.cell-daily-view {
+  display: inline-block;
+  min-width: 157px;
+}
+
+.title-daily-view {
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+  margin: 10px;
+  width: 300px;
+}
+
+.row-date-daily-view {
+  min-width: 320px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  display: inline-table;
+}
+
+.cell-date-daily-view {
+  display: table-cell;
+  min-width: 157px;
+}
+
+.cell-date-value-daily-view {
+  display: table-cell;
+  min-width: 157px;
+  padding-left: 4px;
+}
+
+.cell-date-daily-view [date-picker-wrapper] {
+  position: relative;
+  min-width: 300px;
+  margin-left: 50px;
+}
+
+.cell-date-daily-view [date-picker-wrapper] [date-picker].date-picker-date-time {
+  top: 2px !important;
+  margin-left: -48px !important;
+}
+

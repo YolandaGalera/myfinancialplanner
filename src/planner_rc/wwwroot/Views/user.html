@@ -1,0 +1,69 @@
+<form name="accountSettingsForm">
+    <div class="table-main-view">
+        <div class="title-main-view">
+            <p>ACCOUNT SETTINGS</p>
+        </div>
+        <div class="row-main-view">
+            <div class="cell-main-view">
+                <span>Username</span>
+            </div>
+            <div class="cell-main-view">
+                <input type="string" ng-model="panel.username" />
+            </div>
+        </div>
+        <div class="row-main-view">
+            <div class="cell-main-view">
+                <span>Email *</span>
+            </div>
+            <div class="cell-main-view">
+                <input disabled="disabled" type="email" ng-model="panel.email" required />
+            </div>
+        </div>
+        <div class="row-main-view">
+            <div class="cell-main-view">
+                <span>Country</span>
+            </div>
+            <div class="cell-main-view">
+                <input type="string" ng-model="panel.country" />
+            </div>
+        </div>
+        <div class="row-main-view">
+            <div class="cell-main-view">
+                <span>Birthday</span>
+            </div>
+            <div class="cell-main-view">
+                <input type="text" date-time ng-model="panel.birthday" min-view="date" view='date' format="yyyy-MM-dd" />
+            </div>
+        </div>
+        <div class="row-main-view">
+            <div class="cell-main-view">
+                <span>Password</span>
+            </div>
+            <div class="cell-main-view">
+                <input type="button" class="update-password" ng-click='updatePassword()' value="Update password..." />
+            </div>
+        </div>
+        <div class="row-main-view"
+             ng-messages='accountSettingsForm.password.$error'
+             ng-if='accountSettingsForm.$submitted'>
+            <div class="cell-main-view">
+            </div>
+            <span class="cell-main-view" ng-message='containsletter'>The password should contain at least one letter</span>
+            <span class="cell-main-view" ng-message='containsdigit'>The password should contain at least one number</span>
+            <span class="cell-main-view" ng-message='hascorrectlength'>The password should contain at least 6 characters</span>
+        </div>
+        <div class="row-main-view">
+            <div class="cell-main-view">
+                <button class="selectable inline-block account-btn" type="submit"
+                        ng-click="updateUser(accountSettingsForm.$valid)">
+                    <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> UPDATE
+                </button>
+            </div>
+            <div class="cell-main-view">
+                <div class="inline-block">
+                    <span class="saved-label" ng-show="showSaved" ng-class="{'fade': showSaved}">SAVED!!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

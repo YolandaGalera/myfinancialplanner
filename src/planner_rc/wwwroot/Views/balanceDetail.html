@@ -1,0 +1,134 @@
+<div class="display-inline">
+  <div class="title-detail-view">
+    <p>DETAILED BALANCE</p>
+  </div>
+
+  <div class="date-cell">
+  <span ng-click="toggleOrder('date')">
+    <h4>DATE
+      <span class="sortorder" ng-show="predicate === 'date'" ng-class="{reverse:reverse}"></span>
+    </h4>
+  </span>
+  </div>
+
+  <div class="name-cell">
+  <span ng-click="toggleOrder('name')">
+    <h4>NAME
+      <span class="sortorder" ng-show="predicate === 'name'" ng-class="{reverse:reverse}"></span>
+    </h4>
+  </span>
+  </div>
+
+  <div class="value-cell">
+  <span ng-click="toggleOrder('value')">
+    <h4>VALUE
+      <span class="sortorder" ng-show="predicate === 'value'" ng-class="{reverse:reverse}"></span>
+    </h4>
+  </span>
+  </div>
+
+  <div ng-repeat="entryField in filteredBalance">
+    <balance-entry id="entryField.id" date="entryField.date" name="entryField.name"
+                   value="entryField.value" format="selectedPeriod.name"></balance-entry>
+  </div>
+
+  <pagination class="balance-detail-pagination"
+              ng-model="currentPage"
+              total-items="balance.length"
+              max-size="maxSize"
+              boundary-links="true">
+  </pagination>
+</div>
+
+<div class="filter-group-by-block">
+  <button ng-class="{'button-active': isShowFilter}" class="selectable filter-group-by-button" ng-click="toggleFilter()"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span> FILTER</button>
+  <button ng-class="{'button-active': isShowGroupBy}" class="selectable filter-group-by-button" ng-click="toggleGroupBy()"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> GROUP BY</button>
+
+  <div ng-show="isShowFilter">
+    <div class="row-main-view">
+      <div class="cell-main-view"><span><h4>DATE</h4></span></div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span>From:</span></div>
+      <div class="cell-main-view"><input class="main-input" type="date" ng-model="left.fromDate" min-view="date" view='date'
+                                         format="yyyy-MM-dd" ng-blur="filterManager()"/></div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span>To:</span></div>
+      <div class="cell-main-view"><input class="main-input" type="date" ng-model="left.toDate" min-view="date" view='date'
+                                         format="yyyy-MM-dd" ng-blur="filterManager()"/></div>
+    </div>
+
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span><h4>TYPE</h4></span></div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view left"><span>Income:</span></div>
+      <div class="cell-main-view inline"><input type="checkbox" ng-model="incomeFilter" ng-click="filterManager()"/>
+      </div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view left"><span>Expense:</span></div>
+      <div class="cell-main-view inline"><input type="checkbox" ng-model="expenseFilter" ng-click="filterManager()"/>
+      </div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span>OR:</span></div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span>Name:</span></div>
+      <div class="cell-main-view">
+        <select class="main-input" ng-change="filterManager()"
+                ng-options="typeCategory.name for typeCategory in typeCategories" ng-model="selectedTypeCategory">
+          <option value="">Select category</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span><h4>VALUE</h4></span></div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span>From:</span></div>
+      <div class="cell-main-view"><input ng-change="filterManager()" type="number" ng-model="fromValue"/></div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span>To:</span></div>
+      <div class="cell-main-view"><input ng-change="filterManager()" type="number" ng-model="toValue"/></div>
+    </div>
+  </div>
+
+  <div ng-show="isShowGroupBy">
+    <div class="row-main-view">
+        <div class="cell-main-view left"><span>Name:</span></div>
+      <div class="cell-main-view inline"><input type="checkbox" ng-model="nameGroup" ng-click="groupByManager()"/>
+      </div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view left"><span>Type:</span></div>
+      <div class="cell-main-view inline"><input type="checkbox" ng-model="typeGroup" ng-click="groupByManager()"/>
+      </div>
+    </div>
+
+    <div class="row-main-view">
+      <div class="cell-main-view"><span>Periodicity:</span></div>
+      <div class="cell-main-view">
+        <select ng-class="{groupBySelectDisabled: !typeGroup && !nameGroup}" ng-disabled="!typeGroup && !nameGroup"
+                class="name-cell" ng-change="groupByManager()"
+                ng-options="period.name for period in periods" ng-model="selectedPeriod">
+          <option value="">Select period</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

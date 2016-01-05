@@ -1,0 +1,43 @@
+<div class="display-inline" ng-show="loginStatus.isLogged">
+  <div class="table-main-view">
+    <div class="title-main-view">
+      <p>EXPECTATIONS</p>
+    </div>
+
+    <div class="expected-row main-box" ng-repeat="field in paginatedFields | filter: filterDeleted">
+    <expected-entry id="field.id" name="field.name" type="field.type"
+    value="field.value"></expected-entry>
+    </div>
+
+    <div class="expected-row main-box pointer-less" ng-show="showTotalMonthlyExpenses()">
+      <div class="cell-main-view"><span>TOTAL EXPECTED EXPENSES: </span></div>
+      <div class="cell-main-view"><span>{{calculateExpectedExpenses()}}</span></div>
+    </div>
+
+    <div class="expected-row main-box pointer-less" ng-show="showTotalMonthlyBenefits()">
+      <div class="cell-main-view"><span>TOTAL EXPECTED INCOMES: </span></div>
+      <div class="cell-main-view"><span>{{calculateExpectedBenefits()}}</span></div>
+    </div>
+  </div>
+
+  <pagination class="balance-detail-pagination"
+              ng-model="currentPage"
+              total-items="totalLength"
+              max-size="maxSize"
+              boundary-links="true">
+  </pagination>
+
+  <div class="button-group">
+    <div class="selectable inline-block income-button" ng-click="disabled || addIncomeField()">
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> ADD INCOME
+    </div>
+
+    <div class="selectable inline-block expense-button" ng-click="disabled || addExpensesField()">
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> ADD EXPENSE
+    </div>
+  </div>
+</div>
+
+<div class="display-inline chart" id="chart" ng-show="loginStatus.isLogged">
+  <svg class="chart-svg"></svg>
+</div>

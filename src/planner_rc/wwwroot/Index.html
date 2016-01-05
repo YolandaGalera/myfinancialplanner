@@ -1,0 +1,95 @@
+﻿<html class="no-js" ng-app="yoprojectAngularApp">
+<head>
+    <meta charset="utf-8">
+    <!--<meta name="description" content="">-->
+    <!--<meta name="viewport" content="width=device-width">-->
+    <title></title>
+    <link rel="stylesheet" href="Styles/main.css">
+    <link rel="stylesheet" href="Styles/accountSettings.css">
+    <link rel="stylesheet" href="styles/expenses.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="Styles/leftPanel.css">
+    <link rel="stylesheet" href="Styles/login.css">
+    <link rel="stylesheet" href="Styles/instantEntry.css">
+    <link rel="stylesheet" href="Styles/dailyEntries.css">
+    <link rel="stylesheet" href="Styles/balanceDetail.css">
+    <link rel="stylesheet" href="Styles/yearlyOverview.css">
+    <link rel="stylesheet" href="lib/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="lib/angular-datepicker/index.css">
+    <link rel="stylesheet" href="lib/nvd3/nv.d3.css">
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-messages/angular-messages.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="lib/bootstrap.js/bootstrap.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+    <script src="lib/angular-touch/angular-touch.js"></script>
+    <script src="lib/lodash/lodash.js"></script>
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/nvd3/nv.d3.js"></script>
+    <script src="lib/angular-datepicker/index.js"></script>
+    <script src="/app.js"></script>
+    <!--<script src="scripts/app.js"></script>
+    <script src="scripts/directives/balanceEntryDirective.js"></script>
+    <script src="scripts/directives/expectedEntryDirective.js"></script>
+    <script src="scripts/controllers/realDailySituation.js"></script>
+    <script src="scripts/controllers/expectedSituation.js"></script>
+    <script src="scripts/controllers/yearlyOverview.js"></script>
+    <script src="scripts/controllers/leftPanel.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services/expectedSituationService.js"></script>
+    <script src="scripts/services/dailyRealSituationService.js"></script>
+    <script src="scripts/services/yearlyOverviewService.js"></script>
+    <script src="scripts/services/urls.js"></script>
+    <script src="scripts/services/loginService.js"></script>
+    <script src="scripts/services/userService.js"></script>
+    <script src="scripts/controllers/loginCtrl.js"></script>
+    <script src="scripts/controllers/appContainer.js"></script>
+    <script src="scripts/controllers/instantEntryCtrl.js"></script>
+    <script src="scripts/controllers/balanceDetail.js"></script>
+    <script src="scripts/controllers/userCtrl.js"></script>
+    <script src="scripts/controllers/resetPasswordCtrl.js"></script>
+    <script src="scripts/controllers/balanceEntryDirectiveCtrl.js"></script>
+    <script src="scripts/controllers/expectedEntryDirectiveCtrl.js"></script>
+    <script src="scripts/directives/passwordValidator.js"></script>-->
+    <!-- We use client cookies to save the user credentials -->
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <!--<script src="lib/auth0.js/auth0.js"></script>-->
+    <!-- angular-jwt and angular-storage -->
+    <!--<script src="lib/angular-jwt/angular-jwt.js"></script>-->
+    <!--<script src="lib/auth0-angular/auth0-angular.js"> </script>-->
+    <!-- Setting the right viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="main-container" ng-controller="AppContainerCtrl">
+        <!--<div class="top-bar" ng-if="loginStatus.isLogged"><p>{{title}}</p></div>-->
+        <div class="top-bar" ng-show="loginStatus.isLogged"><p>MY FINANCE PLANNER</p></div>
+        <left-panel class="left-panel-container" ng-show="loginStatus.isLogged"></left-panel>
+        <div ng-view ng-style="{'height': styleAppContainer}" ng-class="{'main-view-container':loginStatus.isLogged, 'right-container': loginStatus.isLogged,'right-container-login': !loginStatus.isLogged}"></div>
+        <span ng-if="loginStatus.isLogged" ng-init="initUser()" class="hello-user" ng-click="goAccountSettings()">Hello {{user.username}}!</span>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        !function (A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                (A[l].q = A[l].q || []).push(arguments)
+            }, A[l].l = +new Date, a = n.createElement(g),
+              r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
